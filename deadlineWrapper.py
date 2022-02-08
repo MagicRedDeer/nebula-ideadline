@@ -6,8 +6,7 @@ import re
 import cStringIO
 import sys
 
-import iutil
-reload(iutil)
+import nebula.common.util as iutil
 
 _jobFilters = [
     'getJobsFilterAnd', 'getJobsFilterIniAnd', 'getJobIdsFilter',

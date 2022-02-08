@@ -5,13 +5,12 @@ import getpass
 import maya.cmds as mc
 from abc import ABCMeta, abstractproperty, abstractmethod
 
-import imaya
+import nebula.applications.imaya as imaya
 
 from ..deadlineWrapper import (DeadlinePluginInfo, DeadlineJob,
                                DeadlineWrapperException, DeadlineAttr,
                                getStatus, getRepositoryRoot, changeRepository)
 
-reload(imaya)
 findUIObjectByLabel = imaya.findUIObjectByLabel
 op = os.path
 
