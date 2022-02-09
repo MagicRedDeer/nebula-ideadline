@@ -40,8 +40,8 @@ __all__ = [
 
 # Constants
 __deadlineCommand__ = 'DeadlineCommand'
-__deadlineDefaultRepo__ = r"\\HP-011\DeadlineRepository8"
-__deadlineDefaultBin__ = r'C:\Program Files\Thinkbox\Deadline8\bin'
+__deadlineDefaultRepo__ = r"\\deadline-10\DeadlineRepository10"
+__deadlineDefaultBin__ = r'C:\Program Files\Thinkbox\Deadline10\bin'
 
 # Setting Deadline Command path
 __deadlineCmdPath__ = None
