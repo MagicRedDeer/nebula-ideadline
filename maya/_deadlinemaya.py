@@ -403,6 +403,8 @@ class DeadlineMayaPluginInfo(DeadlinePluginInfo):
     Camera0 = DeadlineAttr('Camera0', '', str)
     SceneFile = DeadlineAttr('SceneFile', '', str)
     IgnoreError211 = DeadlineAttr('IgnoreError211', 0, int)
+    if imaya.maya_version() >= 2016.5:
+        UseLegacyRenderLayers = DeadlineAttr('UseLegacyRenderLayers', 1, int) 
 
 
 class DeadlineMayaJob(DeadlineJob):
@@ -651,6 +653,8 @@ class DeadlineMayaSubmitter(DeadlineMayaSubmitterBase):
         pi['OutputFilePath'] = op.normpath(self.outputPath).replace('\\', '/')
         pi['OutputFilePrefix'] = imaya.getImageFilePrefix().replace('\\', '/')
         pi['Camera'] = str(camera) if camera is not None else ''
+        if imaya.maya_version >= 2016.5:
+            pi['UseLegacyRenderLayers'] = 0 if imaya.hasRenderSetup() else 1
         self.setJobResolution(job)
         self.setCameras(job)
 
